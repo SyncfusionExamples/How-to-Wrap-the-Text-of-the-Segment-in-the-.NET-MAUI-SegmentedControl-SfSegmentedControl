@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:buttons="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
+             xmlns:local="clr-namespace:WrapSegmentText"
+             x:Class="WrapSegmentText.MainPage">
+    <ContentPage.Content>
+        <buttons:SfSegmentedControl x:Name="segmentedControl" 
+                                    SegmentHeight="100">
+            <buttons:SfSegmentedControl.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Children Package - Only allowed games</x:String>
+                    <x:String>Student Package - All games with Offer</x:String>
+                    <x:String>Individual Package - All games without Offer </x:String>
+                </x:Array>
+            </buttons:SfSegmentedControl.ItemsSource>
+            <buttons:SfSegmentedControl.SegmentTemplate>
+                <DataTemplate>
+                    <Grid Background="Brown">
+                        <Label LineBreakMode="WordWrap" 
+                               HorizontalOptions="Center" 
+                               VerticalOptions="Center" 
+                               Text="{Binding Text}"
+                               TextColor="AliceBlue"
+                               Margin="6"/>
+                    </Grid>
+                </DataTemplate>
+            </buttons:SfSegmentedControl.SegmentTemplate>
+        </buttons:SfSegmentedControl>
+    </ContentPage.Content>
+</ContentPage>
